@@ -33,7 +33,6 @@ export class OwnerLoginComponent {
   onSubmit(details = { airline: String, password: String }): void {
     this.http.post('http://localhost:5100/airline-login', details).subscribe(
       (response: any) => {
-        console.log(response)
         if (response && response.airlineOwner.airline) {
           localStorage.setItem('airline', response.airlineOwner.airline)
         }

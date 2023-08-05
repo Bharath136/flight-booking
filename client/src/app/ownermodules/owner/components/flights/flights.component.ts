@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flights',
@@ -13,13 +14,17 @@ export class FlightsComponent {
   bookedSeats: any[] = [];
   selectedDate: string = '';
   
-  constructor(private http:HttpClient){
+  constructor(private http:HttpClient, private route: Router){
     this.isLoading = true
     const airline = localStorage.getItem('airline')
     this.http.get<any[]>(`http://localhost:5100/flights/airline/${airline}`).subscribe((res) => {
       this.flights = res
       this.isLoading = false
     })
+    const token = localStorage.getItem('ownerToken')
+    if(!token){
+      this.route.navigate(['/login'])
+    }
   }
 
   bookings: any[] = []
