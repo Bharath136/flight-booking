@@ -187,7 +187,6 @@ app.get('/flights/airline/:airline', async (req, res) => {
     try {
         const flights = await models.Flight.find({ airline: req.params.airline });
         res.json(flights);
-        console.log(flights)
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server Error' });
@@ -202,7 +201,6 @@ app.post('/bookings', async (req, res) => {
         const id = req.body.flight;
         const flight = await models.Flight.findById(id);
         flight.reservedSeats.push(...newBooking.seatNumbers);
-        console.log(flight)
         const savedFlight = await flight.save();
         newBooking.flight = savedFlight._id;
         const savedBooking = await newBooking.save();
@@ -216,7 +214,6 @@ app.get('/bookings', async (req, res) => {
     try {
         const bookingDetails = await models.Booking.find().populate('flight');
         res.status(200).json(bookingDetails);
-        console.log(bookingDetails)
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
