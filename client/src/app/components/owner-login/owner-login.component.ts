@@ -31,7 +31,7 @@ export class OwnerLoginComponent {
   }
 
   onSubmit(details = { airline: String, password: String }): void {
-    this.http.post('https://main.d2t61297rqeiah.amplifyapp.com/airline-login', details).subscribe(
+    this.http.post('https://angular-crud-7ld3.onrender.com/airline-login', details).subscribe(
       (response: any) => {
         if (response && response.airlineOwner.airline) {
           localStorage.setItem('airline', response.airlineOwner.airline)

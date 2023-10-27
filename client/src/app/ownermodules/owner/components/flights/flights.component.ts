@@ -17,7 +17,7 @@ export class FlightsComponent {
   constructor(private http:HttpClient, private route: Router){
     this.isLoading = true
     const airline = localStorage.getItem('airline')
-    this.http.get<any[]>(`https://main.d2t61297rqeiah.amplifyapp.com/flights/airline/${airline}`).subscribe((res) => {
+    this.http.get<any[]>(`https://angular-crud-7ld3.onrender.com/flights/airline/${airline}`).subscribe((res) => {
       this.flights = res
       this.isLoading = false
     })
@@ -30,7 +30,7 @@ export class FlightsComponent {
   bookings: any[] = []
 
   onCheckRevenue(id:string){
-    this.http.get<any[]>(`https://main.d2t61297rqeiah.amplifyapp.com/bookings`).subscribe((res: any) => {
+    this.http.get<any[]>(`https://angular-crud-7ld3.onrender.com/bookings`).subscribe((res: any) => {
       // console.log(res)
 
       if(res){
