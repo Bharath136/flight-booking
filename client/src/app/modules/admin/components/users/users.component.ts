@@ -16,6 +16,4 @@ export class UsersComponent {
       this.isLoading = false
     })
   }
-
-  
 }
