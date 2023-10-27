@@ -14,7 +14,7 @@ export class AddFlightComponent {
   onSubmit() {
     // Handle form submission logic
     console.log(this.formData); // Example: Log the form data
-    this.http.post('http://localhost:5100/flights',this.formData).subscribe((res) => {
+    this.http.post('https://main.d2t61297rqeiah.amplifyapp.com/flights',this.formData).subscribe((res) => {
       console.log(res)
       alert('Flight Added.')
     })

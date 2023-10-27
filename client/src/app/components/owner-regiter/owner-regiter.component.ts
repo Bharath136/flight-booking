@@ -28,7 +28,7 @@ export class OwnerRegiterComponent {
   }
 
   onSubmit(details: {  airline: string, email: string, password: string }): void {
-    this.http.post('http://localhost:5100/airline-register', details).subscribe(
+    this.http.post('https://main.d2t61297rqeiah.amplifyapp.com/airline-register', details).subscribe(
       (response) => {
         window.alert('Airline Registered Successfully!');
         this.route.navigate(['/airline-login']);

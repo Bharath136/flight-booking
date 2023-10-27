@@ -11,7 +11,7 @@ export class FlightsComponent {
   flights: any[] = []
   constructor(private http:HttpClient){
     this.isLoading = true
-    this.http.get<any[]>('http://localhost:5100/flights').subscribe((res) => {
+    this.http.get<any[]>('https://main.d2t61297rqeiah.amplifyapp.com/flights').subscribe((res) => {
       this.flights = res
       this.isLoading = false
     })

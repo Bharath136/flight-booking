@@ -12,7 +12,7 @@ export class BookingsComponent {
   constructor(private http:HttpClient){
     this.isLoading = true
     const airline = localStorage.getItem('airline')
-    this.http.get<any[]>('http://localhost:5100/bookings').subscribe((res) => {
+    this.http.get<any[]>('https://main.d2t61297rqeiah.amplifyapp.com/bookings').subscribe((res) => {
       this.bookings = res.filter(booking => booking.flight.airline === airline)
       this.isLoading = false
     })

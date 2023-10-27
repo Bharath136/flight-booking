@@ -98,7 +98,7 @@ export class HomeComponent {
       this.selectedFlight = flight;
       this.flightId = id
       this.modalService.open(this.modalContent, { size: 'lg' });
-      this.http.get<any[]>(`http://localhost:5100/flights/${id}`).subscribe((res: any) => {
+      this.http.get<any[]>(`https://main.d2t61297rqeiah.amplifyapp.com/flights/${id}`).subscribe((res: any) => {
         if (res) {
           const data = res.reservedSeats.filter((each: { date: string }) => {
             const eachDate = new Date(each.date);
@@ -127,7 +127,7 @@ export class HomeComponent {
     } else {
       this.isSame = false
     }
-    this.http.get<any[]>('http://localhost:5100/flights').subscribe((res) => {
+    this.http.get<any[]>('https://main.d2t61297rqeiah.amplifyapp.com/flights').subscribe((res) => {
       this.flights = res.filter(flight => flight.origin === this.selectedFrom && flight.destination === this.selectedTo)
       this.isLoading = false
     })
@@ -176,7 +176,7 @@ export class HomeComponent {
     console.log(bookingDetails)
     const response = confirm("Are you sure you want to confirm the booking?")
     if (response) {
-      this.http.post('http://localhost:5100/bookings', bookingDetails).subscribe((res) => {
+      this.http.post('https://main.d2t61297rqeiah.amplifyapp.com/bookings', bookingDetails).subscribe((res) => {
         this.currentModal = this.modalService.open(this.paymentModal, { size: 'lg' });
         console.log(res)
       })

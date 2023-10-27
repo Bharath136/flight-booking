@@ -11,7 +11,7 @@ export class UsersComponent {
   isLoading = true
 
   constructor(private http:HttpClient){
-    this.http.get<any[]>('http://localhost:5100/users').subscribe((res) => {
+    this.http.get<any[]>('https://main.d2t61297rqeiah.amplifyapp.com/users').subscribe((res) => {
       this.users = res
       this.isLoading = false
     })
