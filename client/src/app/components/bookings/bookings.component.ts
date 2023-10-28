@@ -14,7 +14,7 @@ export class BookingsComponent {
   constructor(private http:HttpClient){
     const userId = localStorage.getItem('userId')
     this.isLoading = true
-    this.http.get<any[]>(`http://localhost:5100/bookings/user/${userId}`).subscribe((res) => {
+    this.http.get<any[]>(`https://angular-crud-7ld3.onrender.com/bookings/user/${userId}`).subscribe((res) => {
       this.bookings = res.sort((a, b) => {
         const dateA = new Date(a.journeyDate);
         const dateB = new Date(b.journeyDate);
@@ -32,10 +32,10 @@ export class BookingsComponent {
   }
 
   onCancleTicket(id:string){
-    this.http.delete(`http://localhost:5100/bookings/${id}`).subscribe((res) => {
+    this.http.delete(`https://angular-crud-7ld3.onrender.com/bookings/${id}`).subscribe((res) => {
       const userId = localStorage.getItem('userId')
       this.isLoading = true
-      this.http.get<any[]>(`http://localhost:5100/bookings/user/${userId}`).subscribe((res) => {
+      this.http.get<any[]>(`https://angular-crud-7ld3.onrender.com/bookings/user/${userId}`).subscribe((res) => {
         this.bookings = res.sort((a, b) => {
           const dateA = new Date(a.journeyDate);
           const dateB = new Date(b.journeyDate);
