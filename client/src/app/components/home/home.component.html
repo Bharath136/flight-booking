@@ -13,12 +13,16 @@
                       <label for="departure">Departure</label>
                       <select name="from" id="from" class="input-field" [(ngModel)]="selectedFrom">
                         <option value="" selected disabled>Departure City</option>
-                        <option value="Chennai">Chennai</option>
+                        <!-- <option value="Chennai">Chennai</option>
                         <option value="Bengalore">Bengalore</option>
                         <option value="Hyderabad">Hyderabad</option>
                         <option value="Mumbai">Mumbai</option>
                         <option value="Madhya Pradesh">Madhya Pradesh</option>
-                        <option value="Delhi">Delhi</option>
+                        <option value="Delhi">Delhi</option> -->
+                        <option value="Newyork">Newyork</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Los Angeles">Los Angeles</option>
                         <!-- Add more options as needed -->
                       </select>
                     </div>
@@ -26,12 +30,15 @@
                       <label for="destination">Destination</label>
                       <select name="to" id="to" class="input-field" [(ngModel)]="selectedTo">
                         <option value="" selected disabled>Destination City</option>
-                        <option value="Chennai">Chennai</option>
+                        <!-- <option value="Chennai">Chennai</option>
                         <option value="Bengalore">Bengalore</option>
-                        <option value="Hyderabad">Hyderabad</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Madhya Pradesh">Madhya Pradesh</option>
-                        <option value="Delhi">Delhi</option>
+                        <option value="Hyderabad">Hyderabad</option> -->
+                        <option value="Newyork">Newyork</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <!-- <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option> -->
                         <!-- Add more options as needed -->
                       </select>
                     </div>
@@ -77,7 +84,7 @@
                                     <p class="card-text" style="color: #9c9c9c;">Arrival Time: {{ flight.arrivalTime }}</p>
                                 </div>
                                 <div>
-                                    <p class="card-text">Price: {{ flight.price }}</p>
+                                    <p class="card-text">Price: {{ flight.price }}$</p>
                                     <p class="card-text" style="color: #9c9c9c;">Total Seats: {{
                                         flight.seatsAvailable  }}</p>
                                 </div>
